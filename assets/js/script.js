@@ -12,18 +12,22 @@ const modalCloseFunc = function () { modal.classList.add('closed') }
 modalCloseOverlay.addEventListener('click', modalCloseFunc);
 modalCloseBtn.addEventListener('click', modalCloseFunc);
 
-
+document.addEventListener('keydown',function(event){
+	if(event.key == "Escape"){
+		modal.classList.add('closed');
+	}
+})
 
 
 
 // notification toast variables
-const notificationToast = document.querySelector('[data-toast]');
-const toastCloseBtn = document.querySelector('[data-toast-close]');
+// const notificationToast = document.querySelector('[data-toast]');
+// const toastCloseBtn = document.querySelector('[data-toast-close]');
 
 // notification toast eventListener
-toastCloseBtn.addEventListener('click', function () {
-  notificationToast.classList.add('closed');
-});
+// toastCloseBtn.addEventListener('click', function () {
+  // notificationToast.classList.add('closed');
+// });
 
 
 
@@ -86,3 +90,14 @@ for (let i = 0; i < accordionBtn.length; i++) {
   });
 
 }
+
+const Home_page = document.getElementById("Home_page");
+Home_page.addEventListener('click',function(){
+	window.location.replace("index.html");
+});
+
+
+const cart = document.getElementById("cart");
+cart.addEventListener('click',function(){
+	window.location.replace("cart.html");
+});
